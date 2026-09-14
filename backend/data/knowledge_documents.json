@@ -1,0 +1,139 @@
+[
+  {
+    "id": "kb_phishing_01",
+    "title": "Credential Phishing & Lookalike Domain Attacks",
+    "category": "Phishing",
+    "indicators": [
+      "Links with typosquatting or mismatched brand domains (e.g. sbi-kyc-verify.top instead of sbi.co.in)",
+      "Use of URL shorteners (bit.ly, tinyurl, cutt.ly) to mask actual destinations",
+      "Urgent calls to verify passwords, ATM PINs, CVVs, or NetBanking credentials",
+      "Generic greetings combined with severe account closure threats",
+      "Punycode homograph domain characters resembling standard alphanumeric brands"
+    ],
+    "guidance": [
+      "Never click links sent via SMS, email, or messaging apps claiming to be your bank",
+      "Check the address bar manually by typing the verified official institution URL",
+      "Banks and payment providers will NEVER ask for your password, PIN, or CVV via SMS or web forms",
+      "If credentials were submitted by mistake, immediately freeze your account via official banking app and change all credentials"
+    ]
+  },
+  {
+    "id": "kb_bank_kyc_02",
+    "title": "Bank Account Suspension & Urgent KYC Verification Fraud",
+    "category": "Bank/KYC Fraud",
+    "indicators": [
+      "Claims that your bank account, PAN card, or SIM card will be blocked/suspended within 24 hours",
+      "Instruction to download remote access APKs (AnyDesk, TeamViewer, RustDesk, QuickSupport)",
+      "Unsolicited calls or messages from 10-digit mobile numbers claiming to represent bank compliance teams",
+      "Direct requests to provide Aadhaar, PAN, and OTP to avoid immediate deactivation"
+    ],
+    "guidance": [
+      "Banks never use regular personal mobile numbers to issue official KYC suspension alerts",
+      "KYC updates are carried out exclusively via verified bank branches or official authenticated mobile apps",
+      "Never install third-party screen sharing or remote management apps recommended by callers",
+      "Call your bank's verified customer helpline printed on the back of your debit card to verify status"
+    ]
+  },
+  {
+    "id": "kb_upi_fraud_03",
+    "title": "UPI Collect Request & QR Code Payment Traps",
+    "category": "UPI/Payment Fraud",
+    "indicators": [
+      "Claims that entering your UPI PIN will 'credit' or 'refund' money to your account",
+      "Buyer on OLX or marketplace sends a QR code or UPI Collect request to 'pay' you",
+      "Unsolicited ₹1 test transaction followed by a large debit/collect approval request",
+      "Demands to approve transactions on Google Pay, PhonePe, or Paytm under the pretext of cashbacks or lotteries"
+    ],
+    "guidance": [
+      "Remember: You NEVER need to enter your UPI PIN to RECEIVE money. UPI PIN is only required to send or debit money",
+      "Decline any unexpected UPI Collect requests immediately",
+      "Never scan QR codes sent by prospective buyers or customer care agents",
+      "Report fraudulent UPI IDs immediately on the respective payment app and to the National Cyber Crime portal (1930)"
+    ]
+  },
+  {
+    "id": "kb_investment_04",
+    "title": "High-Yield Investment & Telegram Task Scams",
+    "category": "Investment Scam",
+    "indicators": [
+      "Guaranteed risk-free returns (e.g. '200% return in 3 days', 'Daily 5000 from crypto trading')",
+      "Part-time 'YouTube video like', 'Google review', or 'Hotel rating' task schemes",
+      "Small initial payout made to build trust, followed by demands for VIP deposit recharge",
+      "Communication conducted entirely over Telegram or WhatsApp groups with fake investor testimonials"
+    ],
+    "guidance": [
+      "Legitimate investments carry market risks; anyone promising guaranteed high returns is running a scam",
+      "Task-based rating/like schemes are organized fraud rings designed to extract advance recharge deposits",
+      "Never transfer funds to private individual bank accounts for company investments",
+      "Verify investment firms on regulatory databases like SEBI or RBI before depositing money"
+    ]
+  },
+  {
+    "id": "kb_job_scam_05",
+    "title": "Work-From-Home & Fake Recruitment Schemes",
+    "category": "Job/Employment Scam",
+    "indicators": [
+      "Unsolicited job offer received via WhatsApp/SMS without any formal interview or application",
+      "High salary offered for minimal work (e.g. ₹40,000/month for data entry or typing)",
+      "Requirement to pay an upfront 'registration fee', 'document verification fee', or 'laptop security deposit'",
+      "Sender email using free domains (@gmail.com, @outlook.com) while claiming to represent top multinationals"
+    ],
+    "guidance": [
+      "Legitimate employers never demand upfront fees, registration deposits, or training charges from candidates",
+      "Check company careers pages directly rather than relying on WhatsApp recruiters",
+      "Do not provide scanned copies of government IDs or bank statements to unverified recruiters",
+      "Block and report numbers circulating unverified remote typing or data entry jobs"
+    ]
+  },
+  {
+    "id": "kb_support_scam_06",
+    "title": "Fake Customer Support & Search Engine Toll-Free Traps",
+    "category": "Customer Support Scam",
+    "indicators": [
+      "Contact number obtained from unofficial search engine results, Google Maps edits, or social media comments",
+      "Agent insists on guiding you to send a payment or install remote access software to resolve an issue",
+      "Claims of refund processing requiring a reverse debit transaction",
+      "Refusal to handle queries through official in-app support chat"
+    ],
+    "guidance": [
+      "Only use support channels located inside official apps or the verified website footer",
+      "Never trust phone numbers listed in public forum comments or unverified Google Maps listings",
+      "Official support executives will never ask you to execute financial transactions to receive refunds",
+      "End the call immediately if asked to download screen-sharing utilities"
+    ]
+  },
+  {
+    "id": "kb_account_takeover_07",
+    "title": "Account Takeover, SIM Swap & OTP Theft",
+    "category": "Account Takeover",
+    "indicators": [
+      "Caller poses as telecom representative offering '5G SIM upgrade' and asks for 20-digit SIM number",
+      "Repeated incoming OTP messages for password reset that you did not initiate",
+      "Urgent request to forward SMS or dial specific MMI codes (e.g. *21*phone_number# for call forwarding)",
+      "Sudden loss of cellular network reception accompanied by unauthorized banking alerts"
+    ],
+    "guidance": [
+      "Never forward SMS or dial secret call-forwarding codes provided by unknown callers",
+      "If your SIM suddenly loses service without explanation, contact your telecom operator immediately from another device",
+      "Enable hardware token or authenticator app 2FA instead of SMS wherever supported",
+      "Do not read out OTPs to any caller, regardless of who they claim to represent"
+    ]
+  },
+  {
+    "id": "kb_safety_guidelines_08",
+    "title": "National Cyber Defense & Essential Financial Safety Guidelines",
+    "category": "Safety Guidelines",
+    "indicators": [
+      "High-pressure deadlines ('15 minutes left to respond')",
+      "Emotional manipulation (fear of arrest, fake police warrants, digital arrest scams)",
+      "Unusual payment methods (cryptocurrency, gift cards, direct UPI to personal accounts)",
+      "Requests to keep communications secret from family or bank staff"
+    ],
+    "guidance": [
+      "In India, report financial cyber fraud immediately to helpline 1930 or online at cybercrime.gov.in within the 'Golden Hour'",
+      "Law enforcement and police agencies never execute 'digital arrest' or demand money via video calls",
+      "Always consult a trusted family member or bank manager before acting on threatening messages",
+      "Remember FinSentry safety rule: Think Before You Trust"
+    ]
+  }
+]
