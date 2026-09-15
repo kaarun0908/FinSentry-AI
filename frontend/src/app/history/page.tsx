@@ -37,7 +37,7 @@ export default function HistoryPage() {
   const fetchHistory = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8000/api/v1/history");
+      const res = await fetch("/api/v1/history");
       if (res.ok) {
         const data = await res.json();
         setHistoryItems(data);
@@ -51,7 +51,7 @@ export default function HistoryPage() {
 
   const handleSelectRecord = async (analysis_id: string) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/analysis/${analysis_id}`);
+      const res = await fetch(`/api/v1/analysis/${analysis_id}`);
       if (res.ok) {
         const data = await res.json();
         setSelectedAnalysis(data.result);

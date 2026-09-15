@@ -11,6 +11,11 @@ class Settings(BaseSettings):
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
     ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+
+    # PRISMtrace Observability
+    PRISMTRACE_API_KEY: str = os.getenv("PRISMTRACE_API_KEY", "")
+    PRISMTRACE_PROJECT_ID: str = os.getenv("PRISMTRACE_PROJECT_ID", "7dc1d636-ca58-4c76-88b9-dbb8700c11e8")
+    PRISMTRACE_HOST: str = os.getenv("PRISMTRACE_HOST", "https://prism-api-prod.up.railway.app")
     
     # Database
     DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./finsentry.db")

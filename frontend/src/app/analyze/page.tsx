@@ -126,8 +126,8 @@ export default function AnalyzePage() {
         await new Promise((r) => setTimeout(r, stepInterval));
       }
 
-      // Final step: invoke FastAPI backend
-      const response = await fetch("http://localhost:8000/api/v1/analyze", {
+      // Final step: invoke backend API (works on localhost & live deployed URL)
+      const response = await fetch("/api/v1/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

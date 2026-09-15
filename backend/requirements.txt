@@ -4,6 +4,7 @@ pydantic>=2.6.0
 pydantic-settings>=2.2.0
 langgraph>=0.0.30
 langchain-core>=0.1.30
+prismtrace-sdk>=0.4.3
 sqlalchemy>=2.0.28
 numpy>=1.26.0
 tldextract>=5.1.0

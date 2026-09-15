@@ -137,7 +137,7 @@ ${result.recommendations.map((r, i) => `${i + 1}. ${r.action}`).join("\n")}`;
   const handleSaveToggle = async () => {
     try {
       setSaveLoading(true);
-      const res = await fetch(`http://localhost:8000/api/v1/history/save/${result.analysis_id}`, {
+      const res = await fetch(`/api/v1/history/save/${result.analysis_id}`, {
         method: "POST"
       });
       if (res.ok) {

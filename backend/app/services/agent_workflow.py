@@ -273,7 +273,40 @@ def build_finsentry_graph():
     workflow.add_edge("recommendations", "response_generator")
     workflow.add_edge("response_generator", END)
 
-    return workflow.compile()
+    compiled = workflow.compile()
+    
+    # Wire PRISMtrace if credentials configured
+    handler = get_prism_handler()
+    if handler:
+        try:
+            from prismtrace.langgraph_helper import wrap_graph
+            compiled = wrap_graph(compiled, handler)
+        except Exception as e:
+            print(f"[PRISMtrace] Warning: Could not wrap graph: {e}")
+
+    return compiled
+
+def get_prism_handler() -> Optional[Any]:
+    """Resolves and returns a PRISMtraceLangGraphHandler if API key is present."""
+    import os
+    from app.core.config import settings
+    api_key = (getattr(settings, "PRISMTRACE_API_KEY", "") or os.getenv("PRISMTRACE_API_KEY", "")).strip()
+    project_id = (getattr(settings, "PRISMTRACE_PROJECT_ID", "") or os.getenv("PRISMTRACE_PROJECT_ID", "7dc1d636-ca58-4c76-88b9-dbb8700c11e8")).strip()
+    host = (getattr(settings, "PRISMTRACE_HOST", "") or os.getenv("PRISMTRACE_HOST", "https://prism-api-prod.up.railway.app")).strip()
+    
+    if api_key:
+        try:
+            from prismtrace import PRISMtraceLangGraphHandler
+            return PRISMtraceLangGraphHandler(
+                api_key=api_key,
+                project_id=project_id,
+                host=host,
+                source="langgraph"
+            )
+        except Exception as exc:
+            print(f"[PRISMtrace] Init error: {exc}")
+            return None
+    return None
 
 compiled_graph = build_finsentry_graph()
 
@@ -306,5 +339,11 @@ def execute_investigation(
         "step_history": []
     }
 
-    result = compiled_graph.invoke(initial_state)
+    # Inject PRISM tracing callback if available
+    config = {}
+    handler = get_prism_handler()
+    if handler:
+        config["callbacks"] = [handler]
+
+    result = compiled_graph.invoke(initial_state, config=config if config else None)
     return result
